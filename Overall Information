@@ -1,0 +1,68 @@
+Title: Hexapod Rescue Robot
+Introduction:  
+Nowadays, there are more and more disasters happening everyday. Saving people’s lives is certainly the most important thing. The traditional way to rescue by using excavators and shovels is low-efficient, dangerous and not very accurate; it also has a high cost in human resources. As robotics and electronic industries have been well developed today, the artificial intelligent robot can do the job better and quicker, with greater efficiency, shorter time, better accuracy and lower cost. Hexapod Rescue robot is a low-cost, highly-efficient, small robot, using different sensor and smarter algorithm. It can adapt to different kinds of terrains, search and report people in danger of fires, earthquakes, gas leaks, and other situations.
+
+Purpose: (please edit)
+	The purpose of the robot is to find possible life signals while moving forwards in complicated terrains. The possibility of life can be ensured by using remote controls and cameras.
+
+Design:
+The hexapod is designed to be adapted to different kinds of terrains and also find and investigate life signals efficiently. Hexapod is a simulation of the way insects walk. By using the tripod gait, it can adapt to different uneven terrains better than traditional ways such as wheels and tracks. Hexapod only needs at least 3 points on the ground to be stable, and it can go over rocks and soft, rugged path. This design is still in its early stages, and needs more research development on the algorithms on controlling leg length and moving the center of gravity.
+	Since there are only a few large and expensive human detectors, this robot collects indirect human signals, such as motion, sound, light, and touch. These possible life signals will be provided to the operators, and they will switch to remote mode to open nightvision cameras to investigate the possibility of survivors.
+
+Function:
+	The hexapod has these several functioning systems:
+1.Road detect system: three ultrasonic sensors, two flame sensors
+	Detect and measure distance to different obstacles, such as flames. It will also choose the path which is least obstructed. 
+2.Life signal detect system: three light sensors, two sound sensors, three motion sensors,
+one red button
+Detect possible life signal such as light, sound, and motion. The robot will report the possible signal to operator.
+3.Environment detect system: Temperature and humidity sensor, gas sensor, GPS sensor.
+	Detect environmental data such as temperature and humidity, as well as air quality and GPS location. The robot will send these environmental data to the operators.
+4.Servo system: 18 MG995 servo, one HS311 servo
+The servo system moves the hexapod. It can also move the camera horizontally and vertically. 
+5.Video and transmission system:  a wireless night vision camera, video receiver, zigbee module, wireless joystick with zigbee module, TFT screen
+This video system allows operator to see the video signal from the camera, and control the position on the joystick via zigbee module.  
+6.Control system: 24-channel servo controller, Arduino Mega 2560 Controller
+	The control system controls all the input and output of sensors and servos by running the code uploaded inside.
+7.Power system: 7.2 V AA battery pack, 6V AA battery pack, 9V battery, and two 5V USB
+cable. 
+	The power system provides electricity for different systems with different voltage outputs. 
+
+Algorithm:
+The Algorithm contains two parts: searching (autonomous) mode and remote mode. 
+In searching mode, the hexapod will move forward based on the terrain and meanwhile search for possible life signals. It will turn or walk around when it detects fire. The light, sound sensor, and button are collecting data all the time. The robot stops every 10 seconds to let motion sensors check if there is movement. If  there are any, the data indicates the possibility of a survivor, the robot will send a message to send a notice to the operator, and change into remote mode.
+In remote mode, the hexapod will stop moving. The operators can control the robot’s camera on the joystick via wireless communication. If the operators found there are life signals, they could write down the GPS location and report to human rescue forces. Otherwise, the hexapod could switch to searching algorithm/mode when the operator found there are no life signals.
+The environmental system (temperature, humidity, and  are collecting data and transferring them to operators all the time. 
+The program is coded in arduino C in arduino IDE, a language based on C and C++. 
+
+Advantage:
+	The hexapod is really efficient for adapting to different terrains. Hexapod is a simulation of the way insects walk. By using the tripod gait, it can adapt to different uneven terrains better than traditional ways such as wheels and tracks. This is especially useful in the environment after an earthquake. Hexapod only needs at least 3 points on the ground to be stable, and it can go over rocks and soft, rugged paths. 
+	The sensor and video system allows the robot to detect life signals more efficiently. These sensors could detect almost all kinds of human actions. The environmental system could provide environmental data and location for further rescue. The camera and data system could give the operator a brief view about the situation inside. This way of rescuing is really efficient, low-cost, and highly automatic. It could even create a searching network with other robots and human resources, which could make the rescue process faster.
+
+
+Process of development:
+I started the project last November. I planned and bought all the materials I need, and started building the tank and hexapod during the Christmas break. The process of development can be concluded in several stages:
+1) Testing and coding individual sensor, then put the sensors in different systems
+2) Build and collaborate  the tank and hexapod platform (without sensors and microcontroller)
+3) Tape sensors on the tank, start writing and testing searching algorithms
+4) Test and code for the hexapod walking algorithm
+5) Test and code for communication part, such as camera and remote control
+6) Uninstall the sensor system on the tank and put on the hexapod
+The advantages of testing each sensor and system separately to lower the possibilities of error while compiling, and make changes quickly.
+
+
+Future development:
+To adapt to more complicated terrains, I will buy stronger and faster servos. I will redesign the hexapod platform with stronger and lighter materials like carbon fibers, due to its heavy weight now. I will add more ultrasonic sensors in the front and underneath to search for possible holes on the ground. 
+	I will also install better battery pack and increase its operating time. A sensor to measure battery level will be added, to transfer battery level to the operator. The sensor part will be all soldered together on PCB board to make the system stabler and smaller. 
+	The communication unit will be improved in case of signal being lost. I will add different units at different channels to make it more reliable.
+	Because of the complex environment in real situations, I could add a mode when the robot found no way to move. The operator can drive it manually by controlling the joystick.
+	I could also add a speaker and mic on the robot to let operators talk with the people stuck in the area, the operators could know operator's condition and demands.
+	A control station is planned to be built, which could display data better and control multiple robots at the same time.
+	
+
+Algorithm:
+The Algorithm contains two parts: searching(autonomous) mode and remote mode. 
+In searching mode, the hexapod will move forward based on the terrain and meanwhile search for possible life signals. It will turn or walk around when it detects fire. The light, sound sensor, and button are collecting data all the time. The robot stops every 10 seconds to let motion sensor check if there is movement. If any the data indicates the possibility of a survivor, the robot will send a message to notify the operator, and change into remote mode.
+In remote mode, the hexapod will stop moving. The operators can control the robot’s camera on the joystick via wireless communication. If the operators found there is life signal, he could write down the GPS location and report to human rescue forces. Otherwise, the hexapod could switch to searching algorithm/mode when the operator found there is no life signal..
+The environmental system (temperature, humidity) are collecting data and transferring them to operators all the time. 
+The program is coded in arduino C in arduino IDE, a language based on C and C++. 
