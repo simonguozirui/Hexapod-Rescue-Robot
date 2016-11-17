@@ -8,4 +8,4 @@ to different kinds of terrains, search and report people in danger of fires, ear
 
 Recieved the Toronto Science Fair 2016 Gold Medal and the Life Labs Award
 
-I am still uploading files.
+Find out more at [devpost](https://devpost.com/software/hexapod-rescue-robot)
